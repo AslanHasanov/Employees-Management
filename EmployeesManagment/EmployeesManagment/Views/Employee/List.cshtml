@@ -1,0 +1,47 @@
+﻿@using EmployeesManagment.ViewModels.Employee;
+@model List<ListViewModel>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+    <link rel="stylesheet" asp-append-version="true" media="screen" href="~/assets/css/bootstrap.css" />
+</head>
+<body>
+    <div class="container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Employee Code</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Surname</th>
+                    <th scope="col">Father Name</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var empModel in Model)
+                {
+                    <tr>
+                        
+                        <td>@empModel.EmployeeCode</td>
+                        <td>@empModel.Name</td>
+                        <td>@empModel.Surname</td>
+                        <td>@empModel.FatherName</td>
+
+
+                    </tr>
+                }
+
+
+            </tbody>
+        </table>
+
+    </div>
+</body>
+</html>
