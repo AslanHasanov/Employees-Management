@@ -9,7 +9,7 @@ namespace EmployeesManagment
             var builder = WebApplication.CreateBuilder(args);
             builder.Services
                 .AddMvc();
-            
+
 
             var app = builder.Build();
 
@@ -17,12 +17,10 @@ namespace EmployeesManagment
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=home}/{action=index}");
+                pattern: "{controller=employee}/{action=list}");
 
             app.Run();
 
-            DataContext dbcontext= new DataContext();
-           var employees= dbcontext.Employees.ToList();
         }
     }
 }
