@@ -17,7 +17,7 @@ namespace EmployeesManagment
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=employee}/{action=list}");
+                pattern: "{controller}/{action}");
 
             app.Run();
 

@@ -1,25 +1,24 @@
 ﻿namespace EmployeesManagment.ViewModels.Employee
 {
-    public class AddViewModel
+    public class ListViewModel
     {
-    
-       
+
+        public string EmployeeCode { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
         public string FatherName { get; set; }
-        public string FIN { get; set; }
-        public string Email { get; set; }
+        public bool IsDeleted { get; set; }
 
 
-        public AddViewModel(string name, string surname, string fatherName, string fin, string email)
+
+        public ListViewModel(string employeeCode , string name, string surname, string fatherName, bool ısDeleted)
         {
-          
+
+            EmployeeCode = employeeCode;
             Name = name;
             Surname = surname;
             FatherName = fatherName;
-            FIN= fin;
-            Email = email;
-           
+            IsDeleted = ısDeleted;
         }
     }
 }

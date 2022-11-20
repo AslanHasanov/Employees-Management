@@ -16,15 +16,15 @@
     <div class="container">
 
         <div class="row justify-content-end">
-        <div class="">
-            <a asp-controller="employee" asp-action="add" target="_blank" class="btn btn-secondary">Add new employee</a>
+            <div class="">
+                <a asp-controller="employee" asp-action="add" target="_blank" class="btn btn-secondary">Add new employee</a>
+            </div>
         </div>
-    </div>
 
         <table class="table">
             <thead>
                 <tr>
-                    <th scope="col">#</th>
+
                     <th scope="col">Employee Code</th>
                     <th scope="col">Name</th>
                     <th scope="col">Surname</th>
@@ -33,19 +33,27 @@
                 </tr>
             </thead>
             <tbody>
+
                 @foreach (var empModel in Model)
                 {
-                    <tr>
-                        
-                        <td>@empModel.EmployeeCode</td>
-                        <td>@empModel.Name</td>
-                        <td>@empModel.Surname</td>
-                        <td>@empModel.FatherName</td>
+                    @if (empModel.IsDeleted == false)
+                    {
+                        <tr>
 
+                            <th scope="row">@empModel.EmployeeCode</th>
+                            <td>@empModel.Name</td>
+                            <td>@empModel.Surname</td>
+                            <td>@empModel.FatherName</td>
 
-                    </tr>
+                            <td>
+
+                            <a asp-route="employee-delete" asp-route-empcode="@empModel.EmployeeCode" class="btn btn-danger">Delete</a>
+                                <a asp-route="employee-update-empcode" asp-route-empcode="@empModel.EmployeeCode" target="_blank" class="btn btn-secondary">Update</a>
+                            </td>
+
+                        </tr>
+                    }
                 }
-
 
             </tbody>
         </table>
