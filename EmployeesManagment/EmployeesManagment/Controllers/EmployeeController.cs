@@ -108,15 +108,15 @@ namespace EmployeesManagment.Controllers
                 return NotFound();
             }
 
-            var oldEmp = new UpdateViewModel(emp.Name, emp.Surname, emp.FatherName, emp.Email, emp.FIN, emp.EmployeeCode);
+            var oldEmp =new UpdateViewModel(emp.Name, emp.Surname, emp.FatherName, emp.Email, emp.FIN, emp.EmployeeCode);
             return View("~/Views/Employee/Update.cshtml", oldEmp);
         }
         [HttpPost("Update", Name = "employee-update")]
         public ActionResult Update(UpdateViewModel updatedModel)
         {
-            using DataContext dbContext = new DataContext();
+            using DataContext dataContext=new DataContext();
 
-            var emp = dbContext.Employees.FirstOrDefault(e => e.EmployeeCode == updatedModel.EmpCode);
+            var emp = dataContext.Employees.FirstOrDefault(e => e.EmployeeCode == updatedModel.EmployeeCode);
 
             if (emp == null && emp.IsDeleted == true)
             {
@@ -133,7 +133,7 @@ namespace EmployeesManagment.Controllers
             emp.Email = updatedModel.Email;
             emp.FIN = updatedModel.FIN;
 
-            dbContext.SaveChanges();
+            dataContext.SaveChanges();
 
 
 

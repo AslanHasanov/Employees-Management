@@ -18,9 +18,9 @@ namespace EmployeesManagment.ViewModels.Employee
         [Required]
         public string FatherName { get; set; }
 
+        [Required]
         [EmailAddress]
         [DataType(DataType.EmailAddress)]
-        [Required]
         public string Email { get; set; }
 
         [Required]
@@ -29,13 +29,13 @@ namespace EmployeesManagment.ViewModels.Employee
         public string FIN { get; set; }
 
         [Required]
-        public string EmpCode { get; set; }
+        public string EmployeeCode { get; set; }
 
         public UpdateViewModel()
         {
 
         }
-        public UpdateViewModel(string name, string surname, string fatherName, string email, string fin, string empCode)
+        public UpdateViewModel(string name, string surname, string fatherName, string email, string fin, string employeeCode)
         {
 
             Name = name;
@@ -43,7 +43,7 @@ namespace EmployeesManagment.ViewModels.Employee
             FatherName = fatherName;
             Email = email;
             FIN = fin;
-            EmpCode = empCode;
+            EmployeeCode = employeeCode;
         }
     }
 }

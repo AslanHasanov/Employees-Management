@@ -1,17 +1,7 @@
-﻿@model AddViewModel
+﻿
+@model AddViewModel
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Document</title>
-    <link rel="stylesheet" asp-append-version="true" media="screen" href="~/assets/css/bootstrap.css" />
-</head>
-<body>
     <div class="container">
         <div class="row justify-content-center">
             <div>
@@ -23,26 +13,31 @@
             <div class="mb-3">
                 <label asp-for="Name" class="form-label">Name</label>
                 <input asp-for="Name" class="form-control" >
+                <span asp-validation-for="Name" class="text-danger"></span>
                
             </div>
              <div class="mb-3">
                 <label asp-for="Surname" class="form-label">Surname</label>
                 <input asp-for="Surname" class="form-control">
+                <span asp-validation-for="Surname" class="text-danger"></span>
                
             </div>
             <div class="mb-3">
                 <label asp-for="FatherName" class="form-label">Father Name</label>
                 <input asp-for="FatherName" class="form-control">
+                <span asp-validation-for="FatherName" class="text-danger"></span>
 
             </div>
              <div class="mb-3">
                 <label asp-for="FIN" class="form-label">FIN</label>
                 <input asp-for="FIN" class="form-control">
+                <span asp-validation-for="FIN" class="text-danger"></span>
                
             </div>
              <div class="mb-3">
                 <label asp-for="Email" class="form-label">Email</label>
                 <input asp-for="Email" class="form-control">
+                <span asp-validation-for="Email" class="text-danger"></span>
                
             </div>
        
@@ -51,6 +46,5 @@
         </form>
 
     </div>
-</body>
-</html>
+
 
