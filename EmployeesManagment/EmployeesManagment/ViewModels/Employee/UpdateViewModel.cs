@@ -19,14 +19,15 @@ namespace EmployeesManagment.ViewModels.Employee
         public string FatherName { get; set; }
 
         [Required]
+
+        [CustomFin(ErrorMessage = "Finn code must be exist of 7 char , less 1 fiqure and less 1 letter")]
+        public string FIN { get; set; }
+
+        [Required]
         [EmailAddress]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
-        [Required]
-
-        [CustomFin(ErrorMessage = "Finn code must be exist of 7 char , less 1 fiqure and less 1 letter")]
-        public string FIN { get; set; }
 
         [Required]
         public string EmployeeCode { get; set; }

@@ -25,8 +25,7 @@
 
                 @foreach (var empModel in Model)
                 {
-                    @if (empModel.IsDeleted == false)
-                    {
+               
                         <tr>
 
                             <th scope="row">@empModel.EmployeeCode</th>
@@ -41,7 +40,7 @@
                             </td>
 
                         </tr>
-                    }
+                   
                 }
 
             </tbody>

@@ -130,8 +130,8 @@ namespace EmployeesManagment.Controllers
             emp.Name = updatedModel.Name;
             emp.Surname = updatedModel.Surname;
             emp.FatherName = updatedModel.FatherName;
-            emp.Email = updatedModel.Email;
             emp.FIN = updatedModel.FIN;
+            emp.Email = updatedModel.Email;
 
             dataContext.SaveChanges();
 

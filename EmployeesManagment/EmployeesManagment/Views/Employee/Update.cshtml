@@ -10,7 +10,7 @@
             </div>
         </div>
 
-        <form method="POST" asp-route="employee-update">
+        <form method="POST" asp-route="employee-update" asp-route-employeeCode="@Model.EmployeeCode">
             <div class="mb-3">
                 <label asp-for="Name" class="form-label">Name</label>
                 <input asp-for="Name" class="form-control" >
